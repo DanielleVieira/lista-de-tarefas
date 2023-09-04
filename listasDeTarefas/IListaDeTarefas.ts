@@ -4,4 +4,6 @@ import ListaDeTarefas from "./ListaDeTarefas";
 export default interface IListaDeTarefas {
   adicionarTarefa(descricaoTarefa: string): ITarefa;
   listarTarefas(): string;
+  listarTarefasConcluidas(): string;
+  listarTarefasPendentes(): string;
 }

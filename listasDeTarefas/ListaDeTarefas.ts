@@ -19,6 +19,19 @@ export default class ListaDeTarefas implements IListaDeTarefas {
     return this._tarefas.join("\n");
   }
 
+  private listarTarefasCondicional(condicao: string): string {
+    return this._tarefas
+      .filter((tarefa) => tarefa.exibirStatus() === condicao.toUpperCase())
+      .join("\n");
+  }
+
+  listarTarefasConcluidas(): string {
+    return this.listarTarefasCondicional("CONCLUÍDA");
+  }
+  listarTarefasPendentes(): string {
+    return this.listarTarefasCondicional("PENDENTE");
+  }
+
   get tarefas(): ITarefa[] {
     return [...this._tarefas];
   }

@@ -3,6 +3,7 @@ import { Prioridade } from "./Prioridade";
 export default interface Itarefa {
   marcarConcluida(): void;
   toString(): string;
+  toStringComPrioridade(): string;
   definirPrioridade(novaPrioridade: Prioridade): void;
-  exibirPrioridade(): string;
+  exibirStatus(): string;
 }

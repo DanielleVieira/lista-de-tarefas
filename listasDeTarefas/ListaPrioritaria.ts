@@ -14,10 +14,22 @@ export default class ListaPrioritaria extends ListaDeTarefas {
 
   listarTarefas(): string {
     return super.tarefas
-      .map(
-        (tarefa) =>
-          `${tarefa.toString()}, Prioridade: ${tarefa.exibirPrioridade()}`
-      )
+      .map((tarefa) => tarefa.toStringComPrioridade())
       .join("\n");
+  }
+
+  private listarTarefasPrioritariasCondicional(condicao: string): string {
+    return super.tarefas
+      .filter((tarefa) => tarefa.exibirStatus() === condicao.toUpperCase())
+      .map((tarefa) => tarefa.toStringComPrioridade())
+      .join("\n");
+  }
+
+  listarTarefasConcluidas(): string {
+    return this.listarTarefasPrioritariasCondicional("CONCLUÍDA");
+  }
+
+  listarTarefasPendentes(): string {
+    return this.listarTarefasPrioritariasCondicional("PENDENTE");
   }
 }

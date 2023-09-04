@@ -27,12 +27,16 @@ export default class Tarefa implements ITarefa {
     }`;
   }
 
+  toStringComPrioridade(): string {
+    return `${this.toString()}, Prioridade: ${this.prioridade}`;
+  }
+
   definirPrioridade(novaPrioridade: Prioridade): void {
     this.prioridade = novaPrioridade;
   }
 
-  exibirPrioridade(): string {
-    return this.prioridade;
+  exibirStatus(): string {
+    return this.concluida ? "CONCLUÍDA" : "PENDENTE";
   }
 
   get descricao(): string {
