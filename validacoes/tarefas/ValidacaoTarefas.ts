@@ -11,7 +11,7 @@ export default abstract class ValidacaoTarefas {
   static validaDescricao(descricao: string): void {
     this.validaString(
       descricao,
-      new DescricaoInvalidaErro("Descricao Inválida")
+      new DescricaoInvalidaErro("Descricao da Tarefa Inválida")
     );
   }
 }

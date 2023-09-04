@@ -22,7 +22,7 @@ export default class Tarefa implements ITarefa {
   }
 
   toString(): string {
-    return `Tarefa: ${this.descricao}\nStatus: ${
+    return `Tarefa: ${this.descricao}, Status: ${
       this.concluida ? "(Concluída)" : "(Pendente)"
     }`;
   }
