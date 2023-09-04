@@ -4,4 +4,5 @@ export default interface Itarefa {
   marcarConcluida(): void;
   toString(): string;
   definirPrioridade(novaPrioridade: Prioridade): void;
+  exibirPrioridade(): string;
 }

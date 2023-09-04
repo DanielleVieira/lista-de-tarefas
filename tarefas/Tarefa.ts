@@ -31,6 +31,10 @@ export default class Tarefa implements ITarefa {
     this.prioridade = novaPrioridade;
   }
 
+  exibirPrioridade(): string {
+    return this.prioridade;
+  }
+
   get descricao(): string {
     return this._descricao;
   }
